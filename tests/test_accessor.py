@@ -132,7 +132,7 @@ def test_can_configure_logger_with_logging_config_dict():
     df = pd.DataFrame({"a": [1, 2, 3]})
     logger = MagicMock()
 
-    pandas_chained_logging.configure_logging(logger)
+    pandas_chained_logging.configure_logger(logger)
     df.log("Hello")
     assert logger.log.call_count == 1
     assert logger.log.call_args[1]["msg"] == "Hello"

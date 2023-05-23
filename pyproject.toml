@@ -2,7 +2,7 @@
 name = "pandas-chained-logging"
 version = "0.1.0"
 description = "Stay true to pandas method chaining by using this logging accessor"
-authors = ["Marwan Sarieddine <marwan@infima.io>"]
+authors = ["Marwan Sarieddine <sarieddine.marwan@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

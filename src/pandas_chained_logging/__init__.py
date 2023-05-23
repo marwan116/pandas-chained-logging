@@ -5,7 +5,7 @@ from typing import Optional
 from .types import LoggerProtocol
 from .accessor import PandasDataFrameLoggingAccessor, PandasSeriesLoggingAccessor
 
-def configure_logging(logger: Optional[LoggerProtocol] = None) -> None:
+def configure_logger(logger: Optional[LoggerProtocol] = None) -> None:
     """Configure pandas_chained_logging to use the given logger.
 
     Args:

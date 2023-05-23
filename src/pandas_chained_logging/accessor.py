@@ -1,18 +1,12 @@
 """Pandas logging accessor."""
 from functools import partial
 import logging
-from typing import Any, Callable, Generic, Optional, Protocol, TypeVar, Union
+from typing import Any, Callable, Generic, Optional, TypeVar, Union
 
 import pandas as pd
 from pandas_chained_logging.types import LoggerProtocol
 
 PandasObjectType = TypeVar("PandasObjectType", bound=Union[pd.DataFrame, pd.Series])
-
-class LoggerProtocol(Protocol):
-    """Protocol for a logger."""
-
-    def log(self, level: int, msg: str) -> None:
-        """Log a message at the given level."""
 
 class LoggingAccessor(Generic[PandasObjectType]):
     """Logging accessor base class."""
@@ -21,8 +15,6 @@ class LoggingAccessor(Generic[PandasObjectType]):
 
     def __init__(self, pandas_obj: PandasObjectType) -> None:
         """Initialize the accessor."""
-        import pandas_chained_logging
-
         self._obj = pandas_obj
 
     def _resolve_message_to_log(self, msg: Union[str, Callable[[PandasObjectType], str]]) -> str:

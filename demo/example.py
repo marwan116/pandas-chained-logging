@@ -49,7 +49,7 @@ logger.addHandler(ch)
 ### Example 3: Configuring a logger once for all chained logging
 # ----------------------------------------------------------------
 
-pandas_chained_logging.configure_logging(logger=logger)
+pandas_chained_logging.configure_logger(logger=logger)
 
 (
     df.log.info("Adding a `c` column")
